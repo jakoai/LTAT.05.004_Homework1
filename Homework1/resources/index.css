@@ -104,3 +104,14 @@ img ~ h3 {
   font-style: italic;
   font-size: 100%;
 }
+
+#account-circle {
+  outline: none;
+  text-decoration: none;
+  height: 30px;
+}
+
+#account-circle .profile_pic {
+  width: auto;
+  height: 100%;
+}
