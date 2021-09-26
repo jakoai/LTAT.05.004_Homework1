@@ -11,6 +11,10 @@ body {
   padding: 20px 60px;
 }
 
+#account-creation + p {
+  font-size: 0.9em;
+}
+
 #login-form {
   display: flex;
   flex-direction: column;
