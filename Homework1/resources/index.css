@@ -4,18 +4,24 @@
   display: flex;
   flex-direction: column;
   max-width: 1000px;
+  margin-top: 50px;
   padding: 20px;
   align-items: center;
   justify-content: center;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .post {
   border-radius: 10px;
-  box-shadow: 5px 5px 20px gray;
+  box-shadow: 2px 5px 15px #cfcfcf;
   background-color: white;
   margin: 10px;
   width: 100%;
-
 }
 
 .post-header {
@@ -23,14 +29,13 @@
   justify-content: space-between;
   margin: 10px;
   align-items: center;
-
 }
 
 .post-header img {
   width: 50px;
 }
 
-.post-header  p {
+.post-header p {
   font-style: italic;
 }
 
@@ -41,19 +46,15 @@
 #header {
   background-color: white;
   margin: 0;
-  padding: 3px;
   position: fixed;
 }
 
 nav {
-  width: 100%;
+  width: calc(100% - 1em);
+  padding: 0.25em 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-nav + div {
-  margin-top: 200px;
 }
 
 nav > img {
@@ -72,15 +73,20 @@ nav div button:hover {
 }
 
 .post-content button {
-  background-color: blue;
+  background-color: #1778bd;
   color: transparent;
   text-shadow: 0 0 0 white;
   border-style: none;
   width: 70px;
-  padding:5px;
+  padding: 5px;
   border-radius: 5px;
   margin: 5px;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.post-content button:hover {
+  background-color: #10629c;
 }
 
 .post-content img {
@@ -88,10 +94,10 @@ nav div button:hover {
 }
 
 h3 {
-    margin: 5px;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 200%;
+  margin: 5px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 200%;
 }
 
 img ~ h3 {

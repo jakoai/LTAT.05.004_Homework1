@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postIt</title>
 
-  <link rel="stylesheet" href="resources/style.css">
-  <link rel="stylesheet" href="resources/index.css">
+    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="resources/index.css">
 
-</head>
+  </head>
 
-<body>
-  <!-- TODO add top bar-->
-  <nav id="header">
-    <img src="https://p.kindpng.com/picc/s/77-774135_clip-art-letters-logo-designs-logo-design-free.png" alt="logo">
-    <div>
-      <input type="text" name="" value="" placeholder="search...">
-      <button>search</button>
+  <body>
+    <!-- TODO add top bar-->
+    <nav id="header">
+      <img src="https://p.kindpng.com/picc/s/77-774135_clip-art-letters-logo-designs-logo-design-free.png" alt="logo">
+      <div>
+        <input type="text" name="searchTerm" id="searchTerm" value="" placeholder="search...">
+        <button>Search</button>
+      </div>
+      <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profile_pic">
+    </nav>
+
+    <div class="container">
+      <div class="post">
+        <div class="post-header">
+          <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
+          <p>Sep 18, 2020, 15:16</p>
+        </div>
+        <div class="post-content">
+          <img
+            src="https://i.guim.co.uk/img/media/7eb6a874f5bc9e7f6b63887394d50a6d635a3dad/311_0_2103_1262/master/2103.jpg?width=700&quality=85&auto=format&fit=max&s=49e0ba330298d4927fc84517b3ebe47d"
+            alt="olilisem pilt">
+          <h3>I think it's going to fall down</h3>
+          <button>&#128077;</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
+          <p>Sep 18, 2020, 16:19</p>
+        </div>
+        <div class="post-content">
+
+          <h3>I like to eat sandwiches</h3>
+          <button>&#128077;</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
+          <p>Sep 18, 2020, 15:16</p>
+        </div>
+        <div class="post-content">
+          <img
+            src="https://st4.depositphotos.com/3250187/27058/i/600/depositphotos_270587992-stock-photo-avengers-4-character-model-features.jpg"
+            alt="olilisem pilt">
+          <h3>Felt stupid, might go to school later</h3>
+          <button>&#128077;</button>
+        </div>
+      </div>
     </div>
-    <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profile_pic">
-  </nav>
 
-  <div class="container">
-    <div class="post">
-      <div class="post-header">
-        <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
-        <p>Sep 18, 2020, 15:16</p>
-      </div>
-      <div class="post-content">
-        <img src="https://i.guim.co.uk/img/media/7eb6a874f5bc9e7f6b63887394d50a6d635a3dad/311_0_2103_1262/master/2103.jpg?width=700&quality=85&auto=format&fit=max&s=49e0ba330298d4927fc84517b3ebe47d"
-        alt="olilisem pilt">
-        <h3>I think it's going to fall down</h3>
-        <button>&#128077;</button>
-      </div>
-    </div>
-
-    <div class="post">
-      <div class="post-header">
-        <img  class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
-        <p>Sep 18, 2020, 16:19</p>
-      </div>
-      <div class="post-content">
-
-        <h3>I like to eat sandwiches</h3>
-        <button>&#128077;</button>
-      </div>
-    </div>
-
-    <div class="post">
-      <div class="post-header">
-        <img  class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
-        <p>Sep 18, 2020, 15:16</p>
-      </div>
-      <div class="post-content">
-        <img src="https://st4.depositphotos.com/3250187/27058/i/600/depositphotos_270587992-stock-photo-avengers-4-character-model-features.jpg"
-        alt="olilisem pilt">
-        <h3>Felt stupid, might go to school later</h3>
-        <button>&#128077;</button>
-      </div>
-    </div>
-  </div>
-
-</body>
+  </body>
 
 </html>

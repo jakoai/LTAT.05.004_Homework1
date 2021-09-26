@@ -1,1 +1,50 @@
 /* login.html lehe jaoks */
+body {
+  display: flex;
+  height: 100vh;
+}
+
+#login-container {
+  margin: auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px 60px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.input-field {
+  outline: none;
+  text-decoration: none;
+
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 4px 6px;
+}
+
+#submit-button {
+  margin: 0 auto;
+  padding: 8px 14px;
+  outline: none;
+  background-color: #4343f1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#submit-button:hover {
+  background-color: #2e2ed3;
+}
+
+a {
+  color: #1778bd;
+}
+
+a:hover {
+  color: #1465a0;
+}
