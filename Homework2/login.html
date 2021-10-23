@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | postIt</title>
+
+    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="resources/login.css">
+  </head>
+
+  <body>
+
+    <div id="login-container">
+      <h1>Welcome to postIt!</h1>
+      <p id="account-creation"><a href="index.html">Create an Account</a></p>
+      <p>Or</p>
+      <p>Please Log In</p>
+
+      <form method="get" id="login-form" onsubmit="window.location.href = 'index.html'; return false;">
+        <input type="text" name="Email" id="emailInput" placeholder="Email" class="input-field">
+        <input type="password" name="Password" id="passwordInput" placeholder="Password" class="input-field">
+        <button type="submit" id="submit-button">Log In</button>
+      </form>
+      <p><a href="index.html">Forgot password?</a></p>
+    </div>
+
+  </body>
+
+</html>

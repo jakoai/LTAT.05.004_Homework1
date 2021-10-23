@@ -1,0 +1,117 @@
+/* index.html jaoks */
+.container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: 20px;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  border-radius: 10px;
+  box-shadow: 2px 5px 15px #cfcfcf;
+  background-color: white;
+  margin: 10px;
+  width: 100%;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.post-header img {
+  width: 50px;
+}
+
+.post-header p {
+  font-style: italic;
+}
+
+.profile_pic {
+  border-radius: 50%;
+}
+
+#header {
+  background-color: white;
+  margin: 0;
+  position: fixed;
+}
+
+nav {
+  width: calc(100% - 1em);
+  padding: 0.25em 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > img {
+  width: 30px;
+}
+
+nav div button {
+  background-color: cornflowerblue;
+  border-style: none;
+  color: white;
+  border-radius: 10px;
+}
+
+nav div button:hover {
+  background-color: darkcyan;
+}
+
+.post-content button {
+  background-color: #1778bd;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  border-style: none;
+  width: 70px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post-content button:hover {
+  background-color: #10629c;
+}
+
+.post-content img {
+  width: 100%;
+}
+
+h3 {
+  margin: 5px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 200%;
+}
+
+img ~ h3 {
+  font-style: italic;
+  font-size: 100%;
+}
+
+#account-circle {
+  outline: none;
+  text-decoration: none;
+  height: 30px;
+}
+
+#account-circle .profile_pic {
+  width: auto;
+  height: 100%;
+}
