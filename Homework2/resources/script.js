@@ -36,7 +36,7 @@ $(function () {
 
     $('.container').html(posts.join(''));
   }
-
+  /*
   //right now for test purposes only
   data = {
     posts: [
@@ -111,4 +111,5 @@ $(function () {
   };
 
   renderPosts(data);
+  */
 });
