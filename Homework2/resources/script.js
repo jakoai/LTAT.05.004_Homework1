@@ -36,6 +36,11 @@ $(function () {
 
     $('.container').html(posts.join(''));
   }
+
+  $("#account-circle").click(function() {
+    console.log("Vajutasime");
+  });
+
   /*
   //right now for test purposes only
   data = {
