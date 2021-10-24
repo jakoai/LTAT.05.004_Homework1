@@ -25,7 +25,7 @@ const renderPosts = (data) => {
 $(() => {
   $.ajax({
     dataType: 'json',
-    url: 'https://api.jsonbin.io/b/61753cc09548541c29c7c0d5',
+    url: 'https://api.jsonbin.io/b/61753cc09548541c29c7c0d5/1',
     headers: {
       'Content-Type': 'application/json',
     },
