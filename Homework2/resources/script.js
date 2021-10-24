@@ -1,19 +1,8 @@
-$(() => {
-  $.ajax({
-    //CORS probleemid
-    dataType: 'json',
-    url: 'https://api.jsonbin.io/b/61753cc09548541c29c7c0d5',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    success: renderPosts,
-  });
+const renderPosts = (data) => {
+  const posts = [];
 
-  function renderPosts(data) {
-    const posts = [];
-
-    $.each(data.posts, (_idx, obj) => {
-      const content = `
+  $.each(data.posts, (_idx, obj) => {
+    const content = `
         <div class="post">
           <div class="post-header">
             <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas">
@@ -27,11 +16,21 @@ $(() => {
         </div>
       `;
 
-      posts.push(content);
-    });
+    posts.push(content);
+  });
 
-    $('.container').html(posts.join(''));
-  }
+  $('.container').html(posts.join(''));
+};
+
+$(() => {
+  $.ajax({
+    dataType: 'json',
+    url: 'https://api.jsonbin.io/b/61753cc09548541c29c7c0d5',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    success: renderPosts,
+  });
 
   $('#account-circle').click(() => {
     $('#account-dropdown').toggleClass('visible');
