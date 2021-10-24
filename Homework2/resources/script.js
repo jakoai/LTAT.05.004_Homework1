@@ -37,8 +37,8 @@ $(function () {
     $('.container').html(posts.join(''));
   }
 
-  $("#account-circle").click(function() {
-    console.log("Vajutasime");
+  $('#account-circle').click(function () {
+    $('#account-dropdown').toggleClass('ac-visible');
   });
 
   /*

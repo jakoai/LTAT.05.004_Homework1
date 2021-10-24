@@ -115,3 +115,21 @@ img ~ h3 {
   width: auto;
   height: 100%;
 }
+
+#account-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(1em + 20px);
+  background-color: #fff;
+  padding: 0;
+  display: none;
+}
+
+#account-dropdown.ac-visible {
+  display: block;
+}
+
+#account-dropdown p {
+  line-height: 1.4;
+  color: #888888;
+}
