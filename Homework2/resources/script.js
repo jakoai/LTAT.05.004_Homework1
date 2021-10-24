@@ -2,7 +2,7 @@ $(function () {
   $.ajax({
     //CORS probleemid
     dataType: 'json',
-    url: 'https://api.jsonbin.io/b/61753cc09548541c29c7c0d5',
+    url: 'https://api.jsonbin.io/b/617584bd4a82881d6c64e0bf',
     headers: {
       'Content-Type': 'application/json',
     },
