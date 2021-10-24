@@ -109,6 +109,7 @@ img ~ h3 {
   outline: none;
   text-decoration: none;
   height: 30px;
+  cursor: pointer;
 }
 
 #account-circle .profile_pic {
@@ -123,6 +124,7 @@ img ~ h3 {
   background-color: #fff;
   padding: 0;
   display: none;
+  padding: 0 0.25em;
 }
 
 #account-dropdown.ac-visible {
