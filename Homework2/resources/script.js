@@ -34,6 +34,6 @@ $(() => {
   }
 
   $('#account-circle').click(() => {
-    $('#account-dropdown').toggleClass('ac-visible');
+    $('#account-dropdown').toggleClass('visible');
   });
 });
