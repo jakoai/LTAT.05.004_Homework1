@@ -1,9 +1,6 @@
-import Vue from "vue";
 import Vuex from "vuex";
 
 const API_URL = "https://api.jsonbin.io/b/61753cc09548541c29c7c0d5/1";
-
-Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -36,3 +33,12 @@ export default new Vuex.Store({
   },
   modules: {},
 });
+
+/*import { createStore } from "vuex";
+
+export default createStore({
+  state: {},
+  mutations: {},
+  actions: {},
+  modules: {},
+});*/
