@@ -2,10 +2,10 @@
     <div class="personContact">
         <div v-for="contact in contactList" :key="contact.id">
             <PersonContact
-                :name="name"
-                :email="email"
-                :tel="telnr"
-                :description="description"
+                :name="contact.name"
+                :email="contact.email"
+                :tel="contact.telnr"
+                :description="contact.description"
             />
         </div>
     </div>
@@ -28,3 +28,10 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.personContact{
+    height:85vh;
+}
+
+</style>

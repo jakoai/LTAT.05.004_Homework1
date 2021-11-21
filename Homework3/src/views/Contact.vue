@@ -10,7 +10,6 @@
 
 <template>
   <div class="contact">
-    <button class="resetButton" @click="resetLikes">Reset likes</button>
     <PersonContacts />
   </div>
 </template>
