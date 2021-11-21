@@ -1,19 +1,22 @@
 <template>
   <div>
-    <Header></Header>
-    <router-view />
-    <Footer></Footer>
+    <div class="container">
+      <Header />
+      <router-view />
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+
 export default {
   components: {
     Header,
-    Footer,
-  },
+    Footer
+  }
 };
 </script>
 
@@ -24,5 +27,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.container {
+  padding: 1em;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 </style>
