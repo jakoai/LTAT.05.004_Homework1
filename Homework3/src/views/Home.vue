@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <div v-for="post in postList" :key="post.time">
-      <Post img="{{post.image}}" time="{{post.time}}" text="{{post.content}}" likes="{{post.likes}}" />
+      <Post
+        :img="post.image"
+        :time="post.time"
+        :text="post.content"
+        :likes="post.likes"
+      />
     </div>
   </div>
 </template>
@@ -17,8 +22,11 @@ export default {
   },
   computed: {
     postList() {
-      return this.$store.state.posts;
+      return this.$store.getters.posts;
     },
+  },
+  mounted() {
+    this.$store.dispatch("loadPosts");
   },
 };
 </script>

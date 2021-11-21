@@ -9,22 +9,22 @@
       <p>{{ time }}</p>
     </div>
     <div class="post-content">
-      {{img ? '<img src="' + img + '" />' : ''}}
+      <img :src="img" alt="Postituse pilt" v-if="img" />
       <h3>{{ text }}</h3>
       <button>&#128077;</button>
-      <a>{{likes}}</a>
+      <a>{{ likes }}</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Post",
   props: {
     time: String,
     img: String,
     text: String,
-    likes: Number, 
+    likes: Number,
   },
 };
 </script>
