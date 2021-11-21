@@ -34,7 +34,7 @@ export default {
 
 <style lang="scss">
 #nav {
-  width: calc(100% - 1em);
+  //width: calc(100% - 1em);
   padding: 0.25em 0.5em;
   display: flex;
   justify-content: space-between;

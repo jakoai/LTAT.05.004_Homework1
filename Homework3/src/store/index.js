@@ -1,6 +1,6 @@
 import Vuex from "vuex";
 
-const API_URL = "https://api.jsonbin.io/b/61753cc09548541c29c7c0d5/1";
+const API_URL = "https://api.jsonbin.io/b/61753cc09548541c29c7c0d5/2";
 
 export default new Vuex.Store({
   state: {

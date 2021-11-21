@@ -9,18 +9,23 @@
       <p>{{ time }}</p>
     </div>
     <div class="post-content">
-      <img :src="img" alt="Postituse pilt" v-if="img" />
+      <img :src="img" alt="Post image" v-if="img" />
       <h3>{{ text }}</h3>
-      <button>&#128077;</button>
-      <a>{{ likes }}</a>
     </div>
+    <LikeButton :likes="likes" :id="id" />
   </div>
 </template>
 
 <script>
+import LikeButton from "./LikeButton";
 export default {
   name: "Post",
+  components: { LikeButton },
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     time: String,
     img: String,
     text: String,
@@ -35,7 +40,6 @@ export default {
   box-shadow: 2px 5px 15px #cfcfcf;
   background-color: white;
   margin: 10px;
-  width: 100%;
 }
 
 .post-header {
@@ -55,23 +59,6 @@ export default {
 
 .profile_pic {
   border-radius: 50%;
-}
-
-.post-content button {
-  background-color: #1778bd;
-  color: transparent;
-  text-shadow: 0 0 0 white;
-  border-style: none;
-  width: 70px;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 5px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.post-content button:hover {
-  background-color: #10629c;
 }
 
 .post-content img {
