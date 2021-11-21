@@ -1,12 +1,16 @@
 <template>
   <div id="nav">
-    <img
-      src="https://p.kindpng.com/picc/s/77-774135_clip-art-letters-logo-designs-logo-design-free.png"
-      alt="logo"
-    />
+    <router-link to="/">
+      <img
+        src="https://p.kindpng.com/picc/s/77-774135_clip-art-letters-logo-designs-logo-design-free.png"
+        alt="logo"
+      />
+    </router-link>
     <div>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About us</router-link> |
+      <router-link to="/">Home</router-link>
+      |
+      <router-link to="/about">About us</router-link>
+      |
       <router-link to="/contact">Contact us</router-link>
     </div>
     <div id="account-circle" class="account-circle">
@@ -28,7 +32,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "Header"
 };
 </script>
 
