@@ -30,14 +30,12 @@ export default {
   }
   .resetButton {
     display: block;
-    position: fixed;
-    left: 80%;
     top: 10%;
     background-color: #1778bd;
     color: transparent;
     text-shadow: 0 0 0 white;
     border-style: none;
-    width: 70px;
+    width: 100px;
     padding: 5px;
     border-radius: 5px;
     margin: 5px;
