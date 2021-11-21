@@ -31,3 +31,12 @@ export default {
   },
 };
 </script>
+
+<style>
+  .post{
+    max-width: 700px;
+  }
+  img {
+    max-width: 600px;
+  }
+</style>

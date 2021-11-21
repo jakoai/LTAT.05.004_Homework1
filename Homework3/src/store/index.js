@@ -22,6 +22,12 @@ export default new Vuex.Store({
         return post;
       });
     },
+    resetLikes: (state) => {
+      state.posts = state.posts.map((post) => {
+        post.likes = 0;
+        return post;
+      })
+    }
   },
   actions: {
     loadPosts({ commit }) {
