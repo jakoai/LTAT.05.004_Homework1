@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <router-link to="/contact">Contact us</router-link>
+    <router-link to="/contact" class="link">Contact us</router-link>
     <a>Tartu 2021</a>
     <a>Homework 3</a>
   </footer>
@@ -15,9 +15,8 @@ footer {
   justify-content: space-between;
   background-color: #1778bd;
 
-  router-link {
+  .link {
     color: white;
-    text-decoration: none;
   }
 }
 </style>
