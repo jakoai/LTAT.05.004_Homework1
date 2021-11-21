@@ -6,8 +6,8 @@
     />
     <div>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/contact">Contact</router-link>
+      <router-link to="/about">About us</router-link> |
+      <router-link to="/contact">Contact us</router-link>
     </div>
     <div id="account-circle" class="account-circle">
       <img
