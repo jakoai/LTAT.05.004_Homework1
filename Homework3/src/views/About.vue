@@ -54,9 +54,9 @@
         </p>
       </div>
       <img
-        class="loik__image"
+        class="loik__image__vasak"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwYSUH_z0DQMNcqCcaRvNtsOj4Z4a9ylULTA&usqp=CAU"
-        alt="worker photo"
+        alt="current tech"
       />
       <div class="loik__tekst">
         <br />
@@ -82,7 +82,7 @@
       <img
         class="loik__image"
         src="https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ef3f7eec4f2390006f0c356%2F0x0.jpg"
-        alt="worker photo"
+        alt="future tech"
       />
       <div class="loik__tekst">
         <h2>The future</h2>
@@ -113,6 +113,10 @@ h1 {
     width: 250px;
     margin: 30px 30px 30px 0;
     float: right;
+    &__vasak{
+      float: left;
+      margin-right: 20px;
+    }
   }
   &__tekst {
     display: inline;
