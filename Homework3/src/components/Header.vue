@@ -13,14 +13,14 @@
       |
       <router-link to="/contact">Contact us</router-link>
     </div>
-    <div id="account-circle" class="account-circle">
+    <div id="account-circle" class="account-circle" @click="toggleDropdown">
       <img
         class="profile_pic"
         src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg"
         alt="profile_pic"
       />
     </div>
-    <div id="account-dropdown">
+    <div id="account-dropdown" :ref="accountDropdown">
       <p>
         John Doe
         <br />
@@ -32,7 +32,18 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      accountDropdown: undefined
+    };
+  },
+  methods: {
+    toggleDropdown() {
+      const dropdown = this.$el.querySelector("#account-dropdown");
+      dropdown.classList.toggle("visible");
+    }
+  }
 };
 </script>
 
@@ -72,10 +83,11 @@ export default {
   #account-dropdown {
     position: absolute;
     right: 0;
-    top: calc(1em + 20px);
+    top: calc(2.5em + 20px);
     background-color: #fff;
     display: none;
     padding: 0 0.25em;
+    box-shadow: 3px 3px 24px 5px rgba(0,0,0,0.25);
   }
 
   #account-dropdown.visible {
