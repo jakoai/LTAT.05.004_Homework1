@@ -3,7 +3,7 @@ const { join } = require('path');
 
 require('dotenv').config();
 
-const { getPosts } = require('./database');
+const postsRouter = require('./routes/posts');
 
 const PORT = process.env.PORT || 3000;
 
@@ -14,10 +14,10 @@ app.set('views', join(__dirname, 'views'));
 
 app.use(express.static(join(__dirname, 'public')));
 
+app.use('/posts', postsRouter);
+
 app.get('/', async (req, res) => {
-  res.render('index', {
-    val: await getPosts(),
-  });
+  res.send('ok');
 });
 
 app.listen(PORT, () => {
