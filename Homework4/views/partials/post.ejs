@@ -1,4 +1,5 @@
 <% if (post) { %>
+  <script src="/js/like.js"></script>
   <div class="post">
     <a href="/singlepost/<%= post.id %>">
       <div class="post-header">
@@ -16,7 +17,7 @@
             </h3>
       </div>
     </a>
-      <button class="like-button" onclick="like(<%= post.id %>)" id="like-btn-<%= post.id %>">
+      <button class="like-button" onclick="like(<%= post.id %>);console.log('mind vajutatu')" id="like-btn-<%= post.id %>">
         &#128077; <span>
           <%= post.likes %>
         </span>

@@ -1,0 +1,10 @@
+.newPostForm{
+    background-color: aliceblue;
+    margin: 3rem;
+    width: 50%;
+    padding: 1rem;
+}
+
+.newPostForm > form {
+    width: 90%;
+}
