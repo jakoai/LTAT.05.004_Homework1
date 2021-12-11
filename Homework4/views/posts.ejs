@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/posts.css">
+    <script src="/js/like.js"></script>
     <title>Home page</title>
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
     <div class="posts">
-      <% posts.forEach(post => { %>
-        <a href="/singlepost/<%= post.id%>">
+      <% if (posts.length > 0) { %>
+        <% posts.forEach(post => { %>
           <%- include('partials/post', {post: post}); %>
-        </a>
-      <% }) %>
+        <% }) %>
+      <% } else { %>
+        <p>You did not post anything</p>
+      <% } %>
     </div>
+    <%- include('./partials/footer.ejs') %>
   </body>
 </html>

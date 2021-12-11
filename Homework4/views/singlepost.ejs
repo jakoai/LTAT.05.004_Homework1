@@ -22,7 +22,13 @@
           fetch(
             endpoint,
             { method: 'DELETE', }
-          ).then(window.location.href = '/')
+          ).then((res) => {
+            if (res.status === 200) {
+              window.location.href = '/';
+            } else {
+              alert("Something went wrong");
+            }
+          });
         });
       </script>
 </body>

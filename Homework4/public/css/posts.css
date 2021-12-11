@@ -1,10 +1,9 @@
-
 .posts {
   margin-top: 40px;
 }
 img {
-max-width: 600px;
-margin: auto;
+  max-width: 600px;
+  margin: auto;
 }
 
 .post {
@@ -12,13 +11,14 @@ margin: auto;
   box-shadow: 2px 5px 15px #cfcfcf;
   background-color: white;
   margin: 10px;
+  padding: 10px;
   max-width: 700px;
   min-width: 500px;
 }
 
 .post-header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 10px;
   align-items: center;
 }
@@ -50,6 +50,23 @@ img ~ h3 {
   font-style: italic;
   font-size: 100%;
 }
-a {
-  all: unset;
+
+.like-button {
+  background-color: #1778bd;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  border-style: none;
+  width: 70px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.like-button:hover {
+  background-color: #10629c;
+}
+.like-button.disabled {
+  cursor: not-allowed;
+  background-color: #d3d3d3;
 }

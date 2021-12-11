@@ -4,11 +4,13 @@ const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
-const postsRouter = require('./routes/posts');
-//const singlePostsRouter = require('./routes/singlepost');
-
-const { getPosts, getSinglePost, deletePost } = require('./database');
-
+const {
+  getPosts,
+  getSinglePost,
+  deletePost,
+  increaseLikes,
+  addPost,
+} = require('./database');
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,43 +24,54 @@ app.set('views', join(__dirname, 'views'));
 
 app.use(express.static(join(__dirname, 'public')));
 
-app.use('/posts', postsRouter);
-
-app.get('/', async (req, res) => {
-  res.render("posts", { posts: await getPosts() })
-});
-app.get('/posts', async (req, res) => {
-  res.render("posts", { posts: await getPosts() })
+app.get('/', async (_req, res) => {
+  res.render('posts', { posts: await getPosts() });
 });
 
-app.get('/singlepost/:id', async(req, res) => {
-  try {
-  const posts = await getSinglePost(req.params.id)
-  res.render('singlepost', {post:posts[0]})
-  } catch (err) {
-  console.error(err.message);
+app.post('/', async (req, res) => {
+  const data = req.body;
+  addPost(data.title, data.body, data.url);
+  res.redirect('/');
+});
+
+app.post('/like-post/:id', async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    res.status(400).send('Invalid post id');
+  } else {
+    await increaseLikes(id);
+    res.status(200).end();
   }
- });
- 
+});
+
+app.get('/singlepost/:id', async (req, res) => {
+  try {
+    const posts = await getSinglePost(req.params.id);
+    res.render('singlepost', { post: posts[0] });
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 app.get('/addnewpost', async (req, res) => {
-  res.render("addnewpost")
+  res.render('addnewpost');
 });
 
-app.delete('/singlepost/:id', async(req, res) => {
+app.delete('/singlepost/:id', async (req, res) => {
   try {
-  console.log(req.params);
-  console.log("delete a post request has arrived");
-  const deletepost = await deletePost(req.params.id);
-  res.redirect('posts');
+    console.log(req.params);
+    console.log('delete a post request has arrived');
+    const deletepost = await deletePost(req.params.id);
+    res.status(200).end();
   } catch (err) {
-  console.error(err.message);
+    console.error(err.message);
+    res.status(500).end();
   }
- });
+});
 
- 
-app.get('*', async function(req, res){
-  res.render("404");
+app.get('*', async function (req, res) {
+  res.render('404');
 });
 
 app.listen(PORT, () => {

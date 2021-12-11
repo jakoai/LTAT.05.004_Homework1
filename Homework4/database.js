@@ -13,17 +13,24 @@ const runQuery = (query, ...args) => {
 };
 
 module.exports.getPosts = () => {
-  return runQuery('SELECT * FROM posts');
+  return runQuery('SELECT * FROM posts ORDER BY id');
 };
 
 module.exports.addPost = (title, body, url) => {
-  return runQuery("INSERT INTO posts(title, body, url, likes) values ($1, $2, $3, 0) RETURNING*", [title, body, url]);
+  return runQuery(
+    'INSERT INTO posts(title, body, url, likes) values ($1, $2, $3, 0) RETURNING*',
+    [title, body, url]
+  );
 };
 
 module.exports.getSinglePost = (id) => {
   return runQuery('SELECT * FROM posts WHERE id=$1', [id]);
-}
+};
 
 module.exports.deletePost = (id) => {
-  return runQuery('DELETE FROM posts WHERE id=$1', [id])
-}
+  return runQuery('DELETE FROM posts WHERE id=$1', [id]);
+};
+
+module.exports.increaseLikes = (id) => {
+  return runQuery('UPDATE posts SET likes = likes + 1 WHERE id=$1', [id]);
+};
