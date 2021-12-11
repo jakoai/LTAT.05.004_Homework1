@@ -10,6 +10,16 @@
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
-    Home
+    <% posts.forEach(post => { %>
+      <h3 class="title">
+      <%= post.title %>
+      </h3>
+      <p class="body">
+      <%= post.body %>
+      </p>
+      likes<p class="body">
+        <%= post.likes %>
+        </p>
+      <% }) %>
   </body>
 </html>

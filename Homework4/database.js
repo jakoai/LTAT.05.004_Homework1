@@ -16,6 +16,6 @@ module.exports.getPosts = () => {
   return runQuery('SELECT * FROM posts');
 };
 
-module.exports.insertPost = (title, content, url) => {
-  return runQuery(`INSERT INTO posts(title, content, url, likes) VALUES (${title}, ${content}, ${url}, 0)`);
+module.exports.addPost = (title, body, url) => {
+  return runQuery(`INSERT INTO posts(title, body, url, likes) VALUES (${title}, ${body}, ${url}, 0)`);
 };

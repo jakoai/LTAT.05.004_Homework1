@@ -4,6 +4,7 @@ const { join } = require('path');
 require('dotenv').config();
 
 const postsRouter = require('./routes/posts');
+const { getPosts } = require('./database');
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,7 +18,7 @@ app.use(express.static(join(__dirname, 'public')));
 app.use('/posts', postsRouter);
 
 app.get('/', async (req, res) => {
-  res.render("posts")
+  res.render("posts", { posts: getPosts() })
 });
 
 app.get('/singlepost', async (req, res) => {

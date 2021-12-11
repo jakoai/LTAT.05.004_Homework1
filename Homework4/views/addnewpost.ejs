@@ -10,11 +10,15 @@
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
-    <div style="margin-top: 40px;">
-      Title:<input style="width:100%"></input><br>
-      Content:<input style="width:100%"></input><br>
-      Image URL:<input style="width:100%"></input><br>
-      <button onclick="">Submit</button>
-    </div>
+    <form action="/posts" method="POST" style="margin-top: 40px;">
+      Title:<input name="title" style="width:100%"/><br>
+      Body:<input name="body" style="width:100%"/><br>
+      Image URL:<input name="url" style="width:100%"/><br>
+      <input type="submit" value="submit"/>
+    </form>
   </body>
+
+  <script>
+
+  </script>
 </html>
