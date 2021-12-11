@@ -23,3 +23,7 @@ module.exports.addPost = (title, body, url) => {
 module.exports.getSinglePost = (id) => {
   return runQuery('SELECT * FROM posts WHERE id=$1', [id]);
 }
+
+module.exports.deletePost = (id) => {
+  return runQuery('DELETE FROM posts WHERE id=$1', [id])
+}

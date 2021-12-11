@@ -7,7 +7,7 @@ require('dotenv').config();
 const postsRouter = require('./routes/posts');
 //const singlePostsRouter = require('./routes/singlepost');
 
-const { getPosts, getSinglePost } = require('./database');
+const { getPosts, getSinglePost, deletePost } = require('./database');
 
 
 const PORT = process.env.PORT || 3000;
@@ -23,12 +23,13 @@ app.set('views', join(__dirname, 'views'));
 app.use(express.static(join(__dirname, 'public')));
 
 app.use('/posts', postsRouter);
-//app.use('/singlepost', singlePostsRouter);
 
 app.get('/', async (req, res) => {
   res.render("posts", { posts: await getPosts() })
 });
-
+app.get('/posts', async (req, res) => {
+  res.render("posts", { posts: await getPosts() })
+});
 
 app.get('/singlepost/:id', async(req, res) => {
   try {
@@ -44,6 +45,18 @@ app.get('/addnewpost', async (req, res) => {
   res.render("addnewpost")
 });
 
+app.delete('/singlepost/:id', async(req, res) => {
+  try {
+  console.log(req.params);
+  console.log("delete a post request has arrived");
+  const deletepost = await deletePost(req.params.id);
+  res.redirect('posts');
+  } catch (err) {
+  console.error(err.message);
+  }
+ });
+
+ 
 app.get('*', async function(req, res){
   res.render("404");
 });

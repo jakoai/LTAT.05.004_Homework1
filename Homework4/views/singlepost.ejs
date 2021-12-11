@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/posts.css">
-    <title>Home page</title>
-  </head>
-  <body>
-    <%- include('./partials/header.ejs') %>
-    
-    <%- include('partials/post', {post: post}); %>
 
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/posts.css">
+  <title>Home page</title>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+    <%- include('partials/post', {post: post}); %>
+      <a class="delete" data-del="<%= post.id %>">Delete</a>
+      <script>
+        const delreq = document.querySelector('a.delete');
+        delreq.addEventListener('click', (e) => {
+          const endpoint = `/singlepost/${delreq.dataset.del}`;
+          fetch(
+            endpoint,
+            { method: 'DELETE', }
+          ).then(window.location.href = '/')
+        });
+      </script>
+</body>
+
 </html>
