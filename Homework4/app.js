@@ -28,6 +28,10 @@ app.get('/', async (_req, res) => {
   res.render('posts', { posts: await getPosts() });
 });
 
+app.get('/posts', async (_req, res) => {
+  res.render('posts', { posts: await getPosts() });
+});
+
 app.post('/', async (req, res) => {
   const data = req.body;
   addPost(data.title, data.body, data.url);
@@ -48,7 +52,7 @@ app.post('/like-post/:id', async (req, res) => {
 app.get('/singlepost/:id', async (req, res) => {
   try {
     const posts = await getSinglePost(req.params.id);
-    if (length(posts) == 0) {
+    if (posts.length == 0) {
       res.render('404');
     }
     res.render('singlepost', { post: posts[0] });
