@@ -19,3 +19,9 @@ module.exports.getPosts = () => {
 module.exports.addPost = (title, body, url) => {
   return runQuery("INSERT INTO posts(title, body, url, likes) values ($1, $2, $3, 0) RETURNING*", [title, body, url]);
 };
+
+module.exports.getSinglePost = (id) => {
+  id = id.substring(1)
+  console.log("requestin postitust id " + id)
+  return runQuery('SELECT * FROM posts WHERE id=$1', [id]);
+}
