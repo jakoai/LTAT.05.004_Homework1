@@ -16,13 +16,7 @@ body {
   align-items: center;
 }
 
-.post {
-  border-radius: 10px;
-  box-shadow: 2px 5px 15px #cfcfcf;
-  background-color: white;
-  margin: 10px;
-  width: 100%;
-}
+
 
 .post-header {
   display: flex;

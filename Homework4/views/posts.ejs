@@ -13,21 +13,23 @@
     <%- include('./partials/header.ejs') %>
     <div class="posts">
       <% posts.forEach(post => { %>
-        <div class="post">
-          <div class="post-header">
-            <h3><%= post.title %></h3>
-            <img
-              class="profile_pic"
-              src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg"
-              alt="profiilikas"
-            />
+        <a href="/singlepost/<%= post.id%>">
+          <div class="post">
+            <div class="post-header">
+              <h3><%= post.title %></h3>
+              <img
+                class="profile_pic"
+                src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg"
+                alt="profiilikas"
+              />
+            </div>
+            <div class="post-content">
+              <img src="<%= post.url %>"/>
+              <h3><%= post.body %></h3>
+            </div>
+            likes: <%= post.likes %>
           </div>
-          <div class="post-content">
-            <img src="<%= post.url %>"/>
-            <h3><%= post.body %></h3>
-          </div>
-          likes: <%= post.likes %>
-        </div>
+        </a>
         <% }) %>
     </div>
   </body>

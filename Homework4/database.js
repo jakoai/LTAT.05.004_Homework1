@@ -21,7 +21,5 @@ module.exports.addPost = (title, body, url) => {
 };
 
 module.exports.getSinglePost = (id) => {
-  id = id.substring(1)
-  console.log("requestin postitust id " + id)
   return runQuery('SELECT * FROM posts WHERE id=$1', [id]);
 }

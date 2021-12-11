@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const postsRouter = require('./routes/posts');
-const singlePostsRouter = require('./routes/singlepost');
+//const singlePostsRouter = require('./routes/singlepost');
 
 const { getPosts, getSinglePost } = require('./database');
 
@@ -23,17 +23,22 @@ app.set('views', join(__dirname, 'views'));
 app.use(express.static(join(__dirname, 'public')));
 
 app.use('/posts', postsRouter);
-app.use('/šinglepost', singlePostsRouter);
+//app.use('/singlepost', singlePostsRouter);
 
 app.get('/', async (req, res) => {
   res.render("posts", { posts: await getPosts() })
 });
 
-app.get('/singlepost/:id', async (req, res) => {
-  await console.log( await getSinglePost(req.params.id))
-  res.json(await getSinglePost(req.params.id)[0]);
-  //res.render("singlepost", {post: await getSinglePost(req.params.id) })
-});
+
+app.get('/singlepost/:id', async(req, res) => {
+  try {
+  const posts = await getSinglePost(req.params.id)
+  res.render('singlepost', {post:posts[0]})
+  } catch (err) {
+  console.error(err.message);
+  }
+ });
+ 
 
 app.get('/addnewpost', async (req, res) => {
   res.render("addnewpost")
