@@ -1,23 +1,26 @@
 <% if (post) { %>
-    <div class="post">
+  <div class="post">
+    <a href="/singlepost/<%= post.id %>">
       <div class="post-header">
-        <a href="/singlepost/<%= post.id %>">
-          <h3><%= post.title %></h3>
-        </a>
-        <img
-          class="profile_pic"
-          src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg"
-          alt="profiilikas"
-        />
+        <h3>
+          <%= post.title %>
+        </h3>
+        <img class="profile_pic" src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg" alt="profiilikas" />
       </div>
       <div class="post-content">
-        <% if (post.url) { %>
-          <img src="<%= post.url %>"/>
-        <% } %>
-        <h3><%= post.body %></h3>
+        <% if (post.url) { %> 
+          <img src="<%= post.url %>" />
+          <% } %>
+            <h3>
+              <%= post.body %>
+            </h3>
       </div>
+    </a>
       <button class="like-button" onclick="like(<%= post.id %>)" id="like-btn-<%= post.id %>">
-        &#128077; <span><%= post.likes %></span>
+        &#128077; <span>
+          <%= post.likes %>
+        </span>
       </button>
-    </div>
-<% } %>
+    
+  </div>
+  <% } %>

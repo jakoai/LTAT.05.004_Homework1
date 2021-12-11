@@ -70,3 +70,10 @@ img ~ h3 {
   cursor: not-allowed;
   background-color: #d3d3d3;
 }
+
+.delete{
+  color: rgb(95, 4, 19);
+  padding: 5px;
+  border-radius: 10%;
+  background-color: #d3d3d3 ;
+}
