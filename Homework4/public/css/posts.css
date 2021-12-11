@@ -1,6 +1,10 @@
 .post{
     max-width: 700px;
   }
+
+.posts {
+  margin-top: 40px;
+}
 img {
 max-width: 600px;
 }
