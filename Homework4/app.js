@@ -48,8 +48,12 @@ app.post('/like-post/:id', async (req, res) => {
 app.get('/singlepost/:id', async (req, res) => {
   try {
     const posts = await getSinglePost(req.params.id);
+    if (length(posts) == 0) {
+      res.render('404');
+    }
     res.render('singlepost', { post: posts[0] });
   } catch (err) {
+    res.render('404');
     console.error(err.message);
   }
 });

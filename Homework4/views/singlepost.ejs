@@ -14,7 +14,8 @@
 <body>
   <%- include('./partials/header.ejs') %>
   <div class="container">
-    <%- include('partials/post', {post: post}); %>
+    <% if (post) { %>
+      <%- include('partials/post', {post: post}); %>
       <a class="delete" data-del="<%= post.id %>">Delete</a>
       <script>
         const delreq = document.querySelector('a.delete');
@@ -32,6 +33,7 @@
           });
         });
       </script>
+      <% } %>
   </div>
   <%- include('./partials/footer.ejs') %>
 </body>
