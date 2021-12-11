@@ -11,21 +11,8 @@
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
-    Home
-    <div class="post">
-      <div class="post-header">
-        <h3><%= post.title %></h3>
-        <img
-          class="profile_pic"
-          src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg"
-          alt="profiilikas"
-        />
-      </div>
-      <div class="post-content">
-        <img src="<%= post.url %>"/>
-        <h3><%= post.body %></h3>
-      </div>
-      likes: <%= post.likes %>
-    </div>
+    
+    <%- include('partials/post', {post: post}); %>
+
   </body>
 </html>
