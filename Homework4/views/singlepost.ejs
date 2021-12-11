@@ -13,6 +13,7 @@
 
 <body>
   <%- include('./partials/header.ejs') %>
+  <div class="container">
     <%- include('partials/post', {post: post}); %>
       <a class="delete" data-del="<%= post.id %>">Delete</a>
       <script>
@@ -31,6 +32,7 @@
           });
         });
       </script>
+  </div>
 </body>
 
 </html>
