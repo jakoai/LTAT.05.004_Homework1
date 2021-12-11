@@ -15,3 +15,7 @@ const runQuery = (query, ...args) => {
 module.exports.getPosts = () => {
   return runQuery('SELECT * FROM posts');
 };
+
+module.exports.insertPost = (title, content, url) => {
+  return runQuery(`INSERT INTO posts(title, content, url, likes) VALUES (${title}, ${content}, ${url}, 0)`);
+};

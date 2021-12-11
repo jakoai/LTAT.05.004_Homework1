@@ -17,7 +17,15 @@ app.use(express.static(join(__dirname, 'public')));
 app.use('/posts', postsRouter);
 
 app.get('/', async (req, res) => {
-  res.send('ok');
+  res.render("home")
+});
+
+app.get('/about', async (req, res) => {
+  res.render("about")
+});
+
+app.get('/newpost', async (req, res) => {
+  res.render("newpost")
 });
 
 app.listen(PORT, () => {
