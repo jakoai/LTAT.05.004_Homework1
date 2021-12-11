@@ -1,0 +1,48 @@
+.post{
+    max-width: 700px;
+  }
+img {
+max-width: 600px;
+}
+
+.post {
+  border-radius: 10px;
+  box-shadow: 2px 5px 15px #cfcfcf;
+  background-color: white;
+  margin: 10px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.post-header img {
+  width: 50px;
+}
+
+.post-header p {
+  font-style: italic;
+}
+
+.profile_pic {
+  border-radius: 50%;
+}
+
+.post-content img {
+  width: 100%;
+}
+
+h3 {
+  margin: 5px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 200%;
+}
+
+img ~ h3 {
+  font-style: italic;
+  font-size: 100%;
+}

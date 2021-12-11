@@ -1,5 +1,6 @@
 const express = require('express');
 const { join } = require('path');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
@@ -10,6 +11,9 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
 
@@ -18,7 +22,7 @@ app.use(express.static(join(__dirname, 'public')));
 app.use('/posts', postsRouter);
 
 app.get('/', async (req, res) => {
-  res.render("posts", { posts: getPosts() })
+  res.render("posts", { posts: await getPosts() })
 });
 
 app.get('/singlepost', async (req, res) => {

@@ -6,20 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/posts.css">
     <title>Home page</title>
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
-    <% posts.forEach(post => { %>
-      <h3 class="title">
-      <%= post.title %>
-      </h3>
-      <p class="body">
-      <%= post.body %>
-      </p>
-      likes<p class="body">
-        <%= post.likes %>
+    <div class="posts">
+      <% posts.forEach(post => { %>
+        <h3 class="title">
+        <%= post.title %>
+        </h3>
+        <p class="body">
+        <%= post.body %>
         </p>
-      <% }) %>
+        likes<p class="body">
+          <%= post.likes %>
+          </p>
+
+        <div class="post">
+          <div class="post-header">
+            <h3><%= post.title %></h3>
+            <img
+              class="profile_pic"
+              src="https://miro.medium.com/max/256/0*vuQRIjTuwmZ7r6em.jpg"
+              alt="profiilikas"
+            />
+          </div>
+          <div class="post-content">
+            <img src="<%= post.likes %>"/>
+            <h3><%= post.body %></h3>
+          </div>
+          likes: <%= post.likes %>
+        </div>
+        <% }) %>
+    </div>
   </body>
 </html>
