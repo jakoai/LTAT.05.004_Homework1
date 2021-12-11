@@ -17,15 +17,19 @@ app.use(express.static(join(__dirname, 'public')));
 app.use('/posts', postsRouter);
 
 app.get('/', async (req, res) => {
-  res.render("home")
+  res.render("posts")
 });
 
-app.get('/about', async (req, res) => {
-  res.render("about")
+app.get('/singlepost', async (req, res) => {
+  res.render("singlepost")
 });
 
-app.get('/newpost', async (req, res) => {
-  res.render("newpost")
+app.get('/addnewpost', async (req, res) => {
+  res.render("addnewpost")
+});
+
+app.get('*', async function(req, res){
+  res.render("404");
 });
 
 app.listen(PORT, () => {
